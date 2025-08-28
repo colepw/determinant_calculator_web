@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    width: 80px;
+    height: 20px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.container {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    place-items: center;
+    border: 2px solid black;
+    padding: 15px;
+    width: 60vw;
+}
+
+.element {
+    margin-top: 10px;
+    max-width: 2.5vw;
+}
+
+.matrix {
+    margin-top: 25px;
+}
+
+.row {
+    margin: 10px;
+}

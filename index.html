@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Determinant Calculator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Determinant Calculator</h1>
+        <div class="container">
+            <label for="dimensions">Enter Dimensions:</label>
+            <input type="number" name="dimensions" id="dimensions" min="1" max="20">
+            <div class="matrix">
+                <!-- Updates with div row classes -->
+            </div>
+            <button id="calculate">Calculate</button>
+        </div>
+        <h2 id="output"></h2>
+        <script type="module" src="./index.js"></script>
+    </body>
+</html>
