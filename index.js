@@ -91,7 +91,7 @@ function generateMatrix() {
         }
     }
     outputTranspose.innerHTML += "\\end{bmatrix} $$";
-    if (size == 1) outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${size} $$`;
+    if (A_T.length == 1) outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${size} $$`;
     MathJax.typesetPromise([outputTranspose]);
 }
 
