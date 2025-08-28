@@ -7,6 +7,10 @@ h2 {
     text-align: center;
 }
 
+label {
+    margin-bottom: 10px;
+}
+
 button {
     width: 80px;
     height: 20px;
@@ -31,7 +35,7 @@ button {
 }
 
 .matrix {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .row {
