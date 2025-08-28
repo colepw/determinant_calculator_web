@@ -5,8 +5,9 @@ const dimMin = dimensionsInput.min;
 const dimMax = dimensionsInput.max;
 const matrixDiv = document.querySelector('.matrix');
 const calcDeterminantButton = document.querySelector('#calculate');
-const outputDeterminant = document.getElementById('output-determinant');
-const outputTranspose = document.getElementById('output-transpose');
+const outputsDiv = document.querySelector('.outputs');
+// const outputDeterminant = document.getElementById('output-determinant');
+// const outputTranspose = document.getElementById('output-transpose');
 
 let size = dimensionsInput.value;
 
@@ -44,6 +45,7 @@ function getDim() {
 
 function generateMatrix() {
     let A = []; // Parameter representation of user inputs
+    let matrixString = "$$ A = \begin{bmatrix} ";
     const elements = document.getElementsByClassName('element');
     for (let i = 0; i < size; i++) {
         let tempRow = [];
@@ -53,16 +55,25 @@ function generateMatrix() {
                 return;
             }
             tempRow.push(+elements[j].value);
+            matrixString += (elements[j].value + " ");
+            if (j == (i + 1) * size - 1 && i != size - 1) {
+                matrixString += "\\\\";
+            } else if (j != (i + 1) * size - 1) {
+                matrixString += "& ";
+            }
         }
         A.push(tempRow);
     }
+    matrixString += "\\end{bmatrix} $$";
     
     for (let i = 0; i < A.length; i++) {
         console.log(A[i]);
     }
     console.log("Passing matrix A into calcDeterminant function...");
     
-    outputDeterminant.innerHTML = `The determinant is: $$ det(A) = ${calcDeterminant(A)} $$`;
+    outputsDiv.innerHTML = `<h2 id="input-matrix">${matrixString}</h2><h2 id="output-determinant"></h2><h2 id="output-transpose"></h2>`;
+    // const matrixHTML = ``;
+    // outputDeterminant.innerHTML = `The determinant is: $$ det(A) = ${calcDeterminant(A)} $$`;
 }
 
 dimensionsInput.addEventListener('input', getDim);
