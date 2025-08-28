@@ -6,8 +6,9 @@ const dimMax = dimensionsInput.max;
 const matrixDiv = document.querySelector('.matrix');
 const calcDeterminantButton = document.querySelector('#calculate');
 const outputsDiv = document.querySelector('.outputs');
-// const outputDeterminant = document.getElementById('output-determinant');
-// const outputTranspose = document.getElementById('output-transpose');
+const inputMatrix = document.getElementById('input-matrix');
+const outputDeterminant = document.getElementById('output-determinant');
+const outputTranspose = document.getElementById('output-transpose');
 
 let size = dimensionsInput.value;
 
@@ -45,7 +46,7 @@ function getDim() {
 
 function generateMatrix() {
     let A = []; // Parameter representation of user inputs
-    let matrixString = "$$ A = \\begin{bmatrix} ";
+    inputMatrix.innerHTML = "$$ A = \\begin{bmatrix} ";
     const elements = document.getElementsByClassName('element');
     for (let i = 0; i < size; i++) {
         let tempRow = [];
@@ -55,16 +56,16 @@ function generateMatrix() {
                 return;
             }
             tempRow.push(+elements[j].value);
-            matrixString += (elements[j].value + " ");
+            inputMatrix.innerHTML += (elements[j].value + " ");
             if (j == (i + 1) * size - 1 && i != size - 1) {
-                matrixString += "\\\\";
+                inputMatrix.innerHTML += "\\\\";
             } else if (j != (i + 1) * size - 1) {
-                matrixString += "& ";
+                inputMatrix.innerHTML += "& ";
             }
         }
         A.push(tempRow);
     }
-    matrixString += "\\end{bmatrix} $$";
+    inputMatrix.innerHTML += "\\end{bmatrix} $$";
     
     for (let i = 0; i < A.length; i++) {
         console.log(A[i]);
@@ -73,6 +74,7 @@ function generateMatrix() {
     
     // outputsDiv.innerHTML = `<h2 id="input-matrix">${matrixString}</h2><h2 id="output-determinant"></h2><h2 id="output-transpose"></h2>`;
     // const matrixHTML = ``;
+    
     outputDeterminant.innerHTML = `The determinant is ${calcDeterminant(A)}`;
 }
 
