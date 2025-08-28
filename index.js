@@ -66,6 +66,7 @@ function generateMatrix() {
         A.push(tempRow);
     }
     inputMatrix.innerHTML += "\\end{bmatrix} $$";
+    MathJax.typesetPromise([inputMatrix]);
     
     for (let i = 0; i < A.length; i++) {
         console.log(A[i]);
