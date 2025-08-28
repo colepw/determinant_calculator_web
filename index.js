@@ -73,10 +73,8 @@ function generateMatrix() {
     }
     console.log("Passing matrix A into calcDeterminant function...");
     
-    // outputsDiv.innerHTML = `<h2 id="input-matrix">${matrixString}</h2><h2 id="output-determinant"></h2><h2 id="output-transpose"></h2>`;
-    // const matrixHTML = ``;
-    
-    outputDeterminant.innerHTML = `The determinant is ${calcDeterminant(A)}`;
+    outputDeterminant.innerHTML = `$$ det(A) = ${calcDeterminant(A)} $$`;
+    MathJax.typesetPromise([outputDeterminant]);
 }
 
 dimensionsInput.addEventListener('input', getDim);
