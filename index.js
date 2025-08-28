@@ -75,6 +75,22 @@ function generateMatrix() {
     
     outputDeterminant.innerHTML = `$$ \\text{det(A)} = ${calcDeterminant(A)} $$`;
     MathJax.typesetPromise([outputDeterminant]);
+
+    let A_T = calcTranspose(A);
+    outputTranspose.innerHTML = "$$ \\text{A}^{T} = \\begin{bmatrix} ";
+    for (let i = 0; i < size; i++) {
+        let tempRow = A_T[i];
+        for (let j = 0; j < size; j++) {
+            outputTranspose.innerHTML += `${tempRow[j]} `;
+            if (j != size - 1) {
+                outputTranspose.innerHTML += "& ";
+            } else if (i != size - 1) {
+                outputTranspose.innerHTML += "\\\\";
+            }
+        }
+    }
+    outputTranspose.innerHTML += "\\end{bmatrix} $$";
+    MathJax.typesetPromise([outputTranspose]);
 }
 
 dimensionsInput.addEventListener('input', getDim);
