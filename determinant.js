@@ -1,8 +1,6 @@
 export function calcDeterminant(matrix) {
     const rank = matrix.length;
-    if (rank == 1) {
-        return matrix[0][0];
-    }
+    if (rank == 1) return matrix[0][0];
 
     let determinant = 0;
     for (let i = 0; i < rank; i++) {
@@ -21,4 +19,18 @@ export function calcDeterminant(matrix) {
 
     console.log("Determinant calculated!");
     return determinant;
+}
+
+export function calcTranspose(matrix) {
+    const rank = matrix.length;
+    if (rank == 1) return matrix[0][0];
+
+    let A_T = [];
+    for (let j = 0; j < rank; j++) {
+        let tempRow = [];
+        for (let i = 0; i < rank; i++) {
+            
+        }
+        
+    }
 }

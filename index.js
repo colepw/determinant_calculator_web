@@ -5,7 +5,7 @@ const dimMin = dimensionsInput.min;
 const dimMax = dimensionsInput.max;
 const matrixDiv = document.querySelector('.matrix');
 const calcDeterminantButton = document.querySelector('#calculate');
-const output = document.getElementById('output');
+const outputDeterminant = document.getElementById('output-determinant');
 
 let A = []; // Malleable matrix to be passed into calcDeterminant
 let size = dimensionsInput.value;
@@ -62,7 +62,7 @@ function generateMatrix() {
     }
     console.log("Passing matrix A into calcDeterminant function...");
     
-    output.innerHTML = `The determinant is ${calcDeterminant(A)}`;
+    outputDeterminant.innerHTML = `The determinant is: $$ det(A) = ${calcDeterminant(A)} $$`;
 }
 
 dimensionsInput.addEventListener('input', getDim);
