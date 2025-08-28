@@ -73,7 +73,7 @@ function generateMatrix() {
     
     // outputsDiv.innerHTML = `<h2 id="input-matrix">${matrixString}</h2><h2 id="output-determinant"></h2><h2 id="output-transpose"></h2>`;
     // const matrixHTML = ``;
-    outputDeterminant.innerHTML = `The determinant is: $$ det(A) = ${calcDeterminant(A)} $$`;
+    outputDeterminant.innerHTML = `The determinant is ${calcDeterminant(A)}`;
 }
 
 dimensionsInput.addEventListener('input', getDim);
