@@ -1,4 +1,4 @@
-import { calcDeterminant } from './determinant.js';
+import { calcDeterminant, calcTranspose } from './determinant.js';
 
 const dimensionsInput = document.getElementById('dimensions');
 const dimMin = dimensionsInput.min;
@@ -6,8 +6,8 @@ const dimMax = dimensionsInput.max;
 const matrixDiv = document.querySelector('.matrix');
 const calcDeterminantButton = document.querySelector('#calculate');
 const outputDeterminant = document.getElementById('output-determinant');
+const outputTranspose = document.getElementById('output-transpose');
 
-let A = []; // Malleable matrix to be passed into calcDeterminant
 let size = dimensionsInput.value;
 
 console.log("Min: " + dimMin);
@@ -43,7 +43,7 @@ function getDim() {
 }
 
 function generateMatrix() {
-    A = [];
+    let A = []; // Parameter representation of user inputs
     const elements = document.getElementsByClassName('element');
     for (let i = 0; i < size; i++) {
         let tempRow = [];
