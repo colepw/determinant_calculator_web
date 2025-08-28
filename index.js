@@ -46,7 +46,7 @@ function getDim() {
 
 function generateMatrix() {
     let A = []; // Parameter representation of user inputs
-    inputMatrix.innerHTML = "$$ A = \\begin{bmatrix} ";
+    inputMatrix.innerHTML = "$$ \\text{A} = \\begin{bmatrix} ";
     const elements = document.getElementsByClassName('element');
     for (let i = 0; i < size; i++) {
         let tempRow = [];
@@ -73,7 +73,7 @@ function generateMatrix() {
     }
     console.log("Passing matrix A into calcDeterminant function...");
     
-    outputDeterminant.innerHTML = `$$ det(A) = ${calcDeterminant(A)} $$`;
+    outputDeterminant.innerHTML = `$$ \\text{det(A)} = ${calcDeterminant(A)} $$`;
     MathJax.typesetPromise([outputDeterminant]);
 }
 
