@@ -29,8 +29,15 @@ export function calcTranspose(matrix) {
     for (let j = 0; j < rank; j++) {
         let tempRow = [];
         for (let i = 0; i < rank; i++) {
-            
+            tempRow.push(matrix[i][j]);
         }
-        
+        A_T.push(tempRow);
     }
+
+    console.log("Transpose calculated!");
+    return A_T;
+}
+
+export function formatMatrix(matrix) {
+    
 }
