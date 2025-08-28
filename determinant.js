@@ -37,7 +37,3 @@ export function calcTranspose(matrix) {
     console.log("Transpose calculated!");
     return A_T;
 }
-
-export function formatMatrix(matrix) {
-    
-}
