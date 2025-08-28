@@ -45,7 +45,7 @@ function getDim() {
 
 function generateMatrix() {
     let A = []; // Parameter representation of user inputs
-    let matrixString = "$$ A = \begin{bmatrix} ";
+    let matrixString = "$$ A = \\begin{bmatrix} ";
     const elements = document.getElementsByClassName('element');
     for (let i = 0; i < size; i++) {
         let tempRow = [];
