@@ -91,7 +91,10 @@ function generateMatrix() {
         }
     }
     outputTranspose.innerHTML += "\\end{bmatrix} $$";
-    if (size == 1) outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${A[0][0]} $$`;
+    if (size == 1) {
+        outputTranspose.innerHTML = "";
+        outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${A[0][0]} $$`;
+    }
     MathJax.typesetPromise([outputTranspose]);
 }
 
