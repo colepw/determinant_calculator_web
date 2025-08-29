@@ -57,6 +57,7 @@ function generateMatrix() {
                 inputMatrix.innerHTML = outputDeterminant.innerHTML = outputTranspose.innerHTML = "";
                 return;
             }
+            if (elements[j].value == 0) elements[j].value = "0";
             tempRow.push(+elements[j].value);
             inputMatrix.innerHTML += (elements[j].value + " ");
             if (j == (i + 1) * size - 1 && i != size - 1) {
