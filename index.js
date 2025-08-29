@@ -53,6 +53,7 @@ function generateMatrix() {
         for (let j = i * size; j < (i + 1) * size; j++) {
             if (elements[j].value === "") {
                 console.log("Matrix must be full");
+                alert("Matrix must be full");
                 inputMatrix.innerHTML = outputDeterminant.innerHTML = outputTranspose.innerHTML = "";
                 return;
             }
