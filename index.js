@@ -66,7 +66,7 @@ function generateMatrix() {
         A.push(tempRow);
     }
     inputMatrix.innerHTML += "\\end{bmatrix} $$";
-    if (size == 1) inputMatrix.innerHTML = `$$ \\text{A} = ${size} $$`;
+    if (size == 1) inputMatrix.innerHTML = `$$ \\text{A} = ${A[0][0]} $$`;
     MathJax.typesetPromise([inputMatrix]);
     
     for (let i = 0; i < A.length; i++) {
@@ -91,7 +91,7 @@ function generateMatrix() {
         }
     }
     outputTranspose.innerHTML += "\\end{bmatrix} $$";
-    if (A_T.length == 1) outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${size} $$`;
+    if (size == 1) outputTranspose.innerHTML = `$$ \\text{A}^{T} = ${A[0][0]} $$`;
     MathJax.typesetPromise([outputTranspose]);
 }
 
